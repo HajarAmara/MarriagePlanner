@@ -1,19 +1,19 @@
   body {
       font: 400 15px Lato, sans-serif;
       line-height: 1.8;
-      color: #818181;
+      color: #cc99ff;
   }
   h2 {
       font-size: 24px;
       text-transform: uppercase;
-      color: #303030;
+      color: #660099;
       font-weight: 600;
       margin-bottom: 30px;
   }
   h4 {
       font-size: 19px;
       line-height: 1.375em;
-      color: #303030;
+      color:#660099;
       font-weight: 400;
       margin-bottom: 30px;
   }  
@@ -25,16 +25,17 @@
   }
   .container-fluid {
       padding: 60px 50px;
+	  background-color:#f7e6ff;
   }
   .bg-grey {
       background-color: #f6f6f6;
   }
   .logo-small {
-      color: #cc99ff;
+      color: #660099;
       font-size: 50px;
   }
   .logo {
-      color: #cc99ff;
+      color: #660099;
       font-size: 200px;
   }
   .thumbnail {
@@ -49,7 +50,7 @@
   }
   .carousel-control.right, .carousel-control.left {
       background-image: none;
-      color: #cc99ff;
+      color:#660099;
   }
   .carousel-indicators li {
       border-color: #cc99ff;
@@ -117,20 +118,25 @@
       font-family: Montserrat, sans-serif;
   }
   .navbar li a, .navbar .navbar-brand {
-      color: #fff !important;
+      color:#660099 !important;
   }
   .navbar-nav li a:hover, .navbar-nav li.active a {
-      color: #cc99ff !important;
+      color: #660099!important;
       background-color: #fff !important;
   }
   .navbar-default .navbar-toggle {
       border-color: transparent;
       color: #fff !important;
   }
+  footer{
+	   color: #660099;	 
+	  background: #cc99ff;
+  }
   footer .glyphicon {
       font-size: 20px;
       margin-bottom: 20px;
-      color: #cc99ff;
+      color: #660099;	 
+	  background: #cc99ff;
   }
   .slideanim {visibility:hidden;}
   .slide {
