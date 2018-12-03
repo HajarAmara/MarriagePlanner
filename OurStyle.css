@@ -19,8 +19,11 @@
   }  
   .jumbotron {
       background-color: #cc99ff;
+ 	background-image: url("pics/wall1.jpg");
+	height: 100%; 
+width: 100%; 
       color: #fff;
-      padding: 100px 25px;
+      padding: 100px 100px;
       font-family: Montserrat, sans-serif;
   }
   .container-fluid {
