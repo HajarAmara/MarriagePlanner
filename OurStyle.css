@@ -29,8 +29,8 @@
       font-family: Brush Script MT, cursive;
       color: white;
       font-size: 66px;
-      font-weight: bold;
-      -webkit-text-stroke: 1px #D1CFCF;
+
+
        text-align: center;
        height: 100vh;
   }
@@ -40,13 +40,14 @@
         font-size: 66px;
         font-weight: bold;
         -webkit-text-stroke: 1px #D1CFCF;
-        
+
          text-align: center;
   }
   .jumbotron button.make_plan {
-      font-family: "Times New Roman", Times, serif;
-    border: 2px solid #e7e7e7;
-    color:Black;
+      font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    border: 2px solid #FB88D1;
+    color: #F668C2;
+    -webkit-text-stroke: 0.1px #F2D8C1;
 	font-size:24px;
     position: absolute;
     left:    215px;
