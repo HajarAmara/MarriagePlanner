@@ -26,6 +26,12 @@
       background-size: cover;
       padding: 100px 100px;
       font-family: Montserrat, sans-serif;
+      font-family: Brush Script MT, cursive;
+      color: white;
+      font-size: 66px;
+      font-weight: bold;
+      -webkit-text-stroke: 1px #D1CFCF;
+       text-align: center;
        height: 100vh;
   }
   .jumbotron p.Wedding_Planner {
@@ -37,6 +43,7 @@
          text-align: center;
   }
   .jumbotron button.make_plan {
+      font-family: "Times New Roman", Times, serif;
     border: 2px solid #e7e7e7;
     color:Black;
     position: absolute;
