@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Marriage Planning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="loginStyle.css" rel="stylesheet" type="text/css">
+	  <script type="text/javascript">
+    function validateUser(){
+      var username = document.forms["myForm1"]["userName"].value;
+      var pasw = document.forms["myForm1"]["psw"].value;
+               if( username == "Admin@gmail.com" && pasw == "Admin" ){
+                    return true;
+               }
+
+      return false;
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign Up</h5>
+            <form class="form-signin" action="SignIn.html"  >
+              <div class="form-label-group">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <label for="inputEmail">Email address</label>
+              </div>
+			   <div class="form-label-group">
+                <input type="text" id="inputPassword" class="form-control" placeholder="Name" required>
+                <label for="inputPassword">Name</label>
+              </div>
+			   <div class="form-label-group">
+                <input type="text" id="inputPassword" class="form-control" placeholder="Partner Name" required>
+                <label for="PartnerName">Partner Name</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <label for="inputPassword">Password</label>
+              </div>
+			   <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <label for="inputPassword">Repeat Password</label>
+              </div>
+			  
+              <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <!--label class="custom-control-label" for="customCheck1">Remember password</label-->
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">create an account</button>
+              <hr class="my-4">
+			   <h5 class="form-a text-center">Already have an acount
+			   <br> <a class="form-a" href="LogIn.html">SignIn</a></h5>
+			   
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

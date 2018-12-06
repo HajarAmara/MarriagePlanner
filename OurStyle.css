@@ -2,10 +2,13 @@
       font: 400 15px Lato, sans-serif;
       line-height: 1.8;
       color: #cc99ff;
+	  background-color:#F9D5D7;
   }
+  /* this css for pages title*/
   h2 {
       font-size: 24px;
       text-transform: uppercase;
+      font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
       color: #660099;
       font-weight: 600;
       margin-bottom: 30px;
@@ -16,18 +19,56 @@
       color:#660099;
       font-weight: 400;
       margin-bottom: 30px;
-  }  
+  }
+  /* this css for the wedding planner in home*/
   .jumbotron {
-      background-color: #cc99ff;
- 	background-image: url("pics/wall1.jpg");
-	height: 100%; 
-width: 100%; 
-      color: #fff;
+    position: relative;
+ 	    background-image: url("pics/wall1.jpg");
+      background-size: cover;
       padding: 100px 100px;
       font-family: Montserrat, sans-serif;
+      font-family: Brush Script MT, cursive;
+      color: white;
+      font-size: 66px;
+      font-weight: bold;
+      -webkit-text-stroke: 1px #D1CFCF;
+       text-align: center;
+       height: 100vh;
   }
+  .jumbotron p.Wedding_Planner {
+    font-family: Brush Script MT, cursive;
+    color: white;
+        font-size: 66px;
+        font-weight: bold;
+        -webkit-text-stroke: 1px #D1CFCF;
+        
+         text-align: center;
+  }
+  .jumbotron button.make_plan {
+      font-family: "Times New Roman", Times, serif;
+    border: 2px solid #e7e7e7;
+    color:Black;
+	font-size:24px;
+    position: absolute;
+    left:    215px;
+    bottom:  85px;
+    text-align: left;
+  }
+  /* this css for the sections*/
   .container-fluid {
+
+    height: 150vh;
       padding: 60px 50px;
+	  background-color:#F9D5D7;
+  }
+   .container-fluid-contact {
+    height: 50vh;
+      padding: 60px 50px;
+	  background-color:#F9D5D7;
+  }
+  .container-fluid-footer{
+	  height: 15vh;
+	   background-color:#F9D5D7;
   }
   .bg-grey {
       background-color: #f6f6f6;
@@ -71,7 +112,7 @@ width: 100%;
       font-style: normal;
   }
   .panel {
-      border: 1px solid #cc99ff; 
+      border: 1px solid #cc99ff;
       border-radius:0 !important;
       transition: box-shadow 0.5s;
   }
@@ -110,7 +151,7 @@ width: 100%;
   }
   .navbar {
       margin-bottom: 0;
-	  background-color:#cc99ff;
+	  background-color: #F6ECE7;
       z-index: 9999;
       border: 0;
       font-size: 12px !important;
@@ -131,13 +172,13 @@ width: 100%;
       color: #fff !important;
   }
   footer{
-	   color: #660099;	 
+	   color: #660099;
 	  background: #cc99ff;
   }
   footer .glyphicon {
       font-size: 20px;
       margin-bottom: 20px;
-      color: #660099;	 
+      color: #660099;
 	  background: #cc99ff;
   }
   .slideanim {visibility:hidden;}
@@ -152,7 +193,7 @@ width: 100%;
     0% {
       opacity: 0;
       transform: translateY(70%);
-    } 
+    }
     100% {
       opacity: 1;
       transform: translateY(0%);
@@ -162,7 +203,7 @@ width: 100%;
     0% {
       opacity: 0;
       -webkit-transform: translateY(70%);
-    } 
+    }
     100% {
       opacity: 1;
       -webkit-transform: translateY(0%);
