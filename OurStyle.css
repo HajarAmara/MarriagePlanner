@@ -41,7 +41,6 @@
         font-size: 66px;
         font-weight: bold;
         -webkit-text-stroke: 1px #D1CFCF;
-        
          text-align: center;
   }
   .jumbotron button.make_plan {
@@ -69,6 +68,7 @@
   .container-fluid-footer{
 	  height: 15vh;
 	   background-color:#F9D5D7;
+
   }
   .bg-grey {
       background-color: #f6f6f6;
