@@ -54,6 +54,9 @@
     bottom:  85px;
     text-align: left;
   }
+  a.make_plan{
+    color: #F668C2;
+  }
   /* this css for the sections*/
   .container-fluid {
 
