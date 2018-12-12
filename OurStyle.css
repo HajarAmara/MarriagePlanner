@@ -44,6 +44,11 @@ h4 {
 
        text-align: center;
 }
+
+#startBtn{
+  text-align: center;
+}
+
 .jumbotron button.make_plan {
     font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
   border: 2px solid #FB88D1;

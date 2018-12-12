@@ -24,7 +24,7 @@ body{
 /* title*/
 p.title {
   font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
-  color: white;
+  color: #A42353;
   font-size: 44px;
   font-weight: bold;
   -webkit-text-stroke: 1px #D1CFCF;
@@ -33,7 +33,7 @@ p.title {
 /* steps container*/
 .list-group{
   padding: 19px;
-  background-image: url(pics/flowerWall.jpg);
+  background-color: #AA6F85;
 }
 .list-group-item{
   background-color: #FBF0F4;
