@@ -5,6 +5,22 @@ body{
   background-size: cover;
   font-family: sans-serif;
 }
+/* this css for the header*/
+.navbar {
+    margin-bottom: 0;
+  background-color: #F6ECE7;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+}
+a.navbar-brand{
+  color: #660099;
+}
+
 .loginBox{
   position: absolute;
   top: 50%;

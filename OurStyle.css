@@ -2,6 +2,7 @@ body {
     font: 400 15px Lato, sans-serif;
     line-height: 1.8;
     color: #cc99ff;
+    background-color:#F9D5D7;
 }
 /* this css for pages title*/
 h2 {
@@ -170,6 +171,9 @@ a.make_plan{
 .navbar-nav li a:hover, .navbar-nav li.active a {
     color: #660099!important;
     background-color: #fff !important;
+}
+.list-group-item-info{
+  background-color:#F1D7F9;
 }
 .navbar-default .navbar-toggle {
     border-color: transparent;
