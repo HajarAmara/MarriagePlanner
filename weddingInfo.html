@@ -92,21 +92,21 @@
 				<form>
 						<div class="row">
 							<div class="col-sm-12">
-								<h1>Contact form</h1>
+								<h1>Details</h1>
 							</div>
 						</div>
 
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="inputBox ">
-									<div class="inputText">First Name</div>
+									<div class="inputText">Bride Name</div>
 									<input type="text" name="" class="input">
 								</div>
 							</div>
 
 							<div class="col-sm-6">
 								<div class="inputBox">
-									<div class="inputText">Last Name</div>
+									<div class="inputText">Groom Name</div>
 									<input type="text" name="" class="input">
 								</div>
 							</div>
@@ -115,7 +115,7 @@
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="inputBox">
-									<div class="inputText">Email</div>
+									<div class="inputText">Budget</div>
 									<input type="text" name="" class="input">
 								</div>
 							</div>
@@ -127,54 +127,42 @@
 								</div>
 							</div>
 						</div>
-
-						<div class="row">
-							<div class="col-sm-12">
-								<div class="inputBox">
-									<div class="inputText">Email</div>
-									<textarea class="input"></textarea>
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-sm-12">
-								<input type="submit" name="" class="button" value="Send Message">
-							</div>
-						</div>
+            <!-- select date -->
+            <div class="row">
+                    <div class="col-sm-offset-4 col-sm-4">
+                        <h2>Wedding Date</h2>
+                        <hr/>
+                        <div class="date-picker"  data-date="2014-02-03">
+                            <div class="date-container">
+                                <h3 class="date">
+                                    <span data-toggle="datepicker" data-method="subtract" data-type="d" class="fa fa-angle-left"></span>
+                                    <span class="text">17th</span>
+                                    <span data-toggle="datepicker" data-method="add" data-type="d" class="fa fa-angle-right"></span>
+                                </h3>
+                                <h2 class="month">
+                                    <span data-toggle="datepicker" data-method="subtract" data-type="M" class="fa fa-angle-left"></span>
+                                    <span class="text">December</span>
+                                    <span data-toggle="datepicker" data-method="add" data-type="M" class="fa fa-angle-right"></span>
+                                </h2>
+                                <h3 class="year">
+                                    <span data-toggle="datepicker" data-method="subtract" data-type="y" class="fa fa-angle-left"></span>
+                                    <span class="text">2014</span>
+                                    <span data-toggle="datepicker" data-method="add" data-type="y" class="fa fa-angle-right"></span>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="dateinput" name="date"></input>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.js"></script>
 				</form>
 			</div>
-      <!-- select date -->
-      <div class="row">
-              <div class="col-sm-offset-4 col-sm-4">
-                  <h2>Select Date</h2>
-                  <hr/>
-                  <div class="date-picker"  data-date="2014-02-03">
-                      <div class="date-container">
-                          <h3 class="date">
-                              <span data-toggle="datepicker" data-method="subtract" data-type="d" class="fa fa-angle-left"></span>
-                              <span class="text">17th</span>
-                              <span data-toggle="datepicker" data-method="add" data-type="d" class="fa fa-angle-right"></span>
-                          </h3>
-                          <h2 class="month">
-                              <span data-toggle="datepicker" data-method="subtract" data-type="M" class="fa fa-angle-left"></span>
-                              <span class="text">December</span>
-                              <span data-toggle="datepicker" data-method="add" data-type="M" class="fa fa-angle-right"></span>
-                          </h2>
-                          <h3 class="year">
-                              <span data-toggle="datepicker" data-method="subtract" data-type="y" class="fa fa-angle-left"></span>
-                              <span class="text">2014</span>
-                              <span data-toggle="datepicker" data-method="add" data-type="y" class="fa fa-angle-right"></span>
-                          </h3>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <input type="hidden" id="dateinput" name="date"></input>
-
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.js"></script>
-
 		</div>
+    <ul class="pager">
+  <li class="previous"><a href="weddingInfo.html">Previous</a></li>
+  <li class="next"><a href="TimeLinePage.html">Next</a></li>
+  </ul>
 	</div>
+
 </body>
