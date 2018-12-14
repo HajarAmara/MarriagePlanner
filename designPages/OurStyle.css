@@ -23,7 +23,7 @@ h4 {
 /* this css for the wedding planner in home*/
 .jumbotron {
   position: relative;
-    background-image: url("pics/wall1.jpg");
+    background-image: url("../pics/wall1.jpg");
     background-size: cover;
     padding: 100px 100px;
     font-family: Montserrat, sans-serif;

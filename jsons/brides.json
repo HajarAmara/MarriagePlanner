@@ -1,0 +1,16 @@
+{
+  "brides":[
+    {
+      "brideName": "Reta",
+      "email": "Reta@gmail.com",
+      "password":"red148@t",
+      "groomName":"Danny"
+    },
+    {
+      "brideName": "Allen",
+      "email": "Allen@gmail.com",
+      "password":"alra520@t",
+      "groomName":"Ron"
+    }
+   ]
+}

@@ -12,24 +12,14 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link href="loginStyle.css" rel="stylesheet" type="text/css">
-	  <script type="text/javascript">
-    function validateUser(){
-      var username = document.forms["myForm1"]["userName"].value;
-      var pasw = document.forms["myForm1"]["psw"].value;
-               if( username == "Admin@gmail.com" && pasw == "Admin" ){
-                    return true;
-               }
-
-      return false;
-    }
-  </script>
+    <link href="../designPages/loginStyle.css" rel="stylesheet" type="text/css">
+	  <script type="text/javascript" src="../JSFiles/MyScript.js"></script>
 </head>
 <body>
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="MarriagePlanning.html" style="float:right;"><img src="pics/HouseHeart.png" width="20px" height="20px" style="float:left;" alt="" hspace="10">Home</a>
+        <a class="navbar-brand" href="../HtmlPages/MarriagePlanning.html" style="float:right;"><img src="../pics/HouseHeart.png" width="20px" height="20px" style="float:left;" alt="" hspace="10">Home</a>
       </div>
     </div>
   </nav>
@@ -40,26 +30,26 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center">Sign Up</h5>
-            <form class="form-signin" action="SignIn.html"  >
+            <form class="form-signin" action="../HtmlPages/LogIn.html"  >
               <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <input type="email" id="email" class="form-control"  placeholder="Email Address" name="email" required>
                 <label for="inputEmail">Email address</label>
               </div>
 			   <div class="form-label-group">
-                <input type="text" id="inputPassword" class="form-control" placeholder="Name" required>
+                <input type="text" id="name" class="form-control"  placeholder="Name" name="name" required>
                 <label for="inputPassword">Name</label>
               </div>
 			   <div class="form-label-group">
-                <input type="text" id="inputPassword" class="form-control" placeholder="Partner Name" required>
+                <input type="text" id="partnerName" class="form-control" placeholder="Partner Name" name="partnerName" required>
                 <label for="PartnerName">Partner Name</label>
               </div>
 
               <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
                 <label for="inputPassword">Password</label>
               </div>
 			   <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <input type="password" id="rePassword" class="form-control" placeholder="rePassword" name="repassword" required>
                 <label for="inputPassword">Repeat Password</label>
               </div>
 
