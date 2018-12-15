@@ -1,9 +1,20 @@
-function getJops(){
-  $("#jopsData").text("");
-  $.getJSON("jops.json", function(data){
+function getBrideData(){
+  $("#bridesData").text("");
+  $.getJSON("brides.json", function(data){
     $.each(data, function(i, item){
       $.each(item, function(j, res){
-        $("#jopsData").append("Jop: " + res.name + "<br>" + "  University: " + res.university + "<br>" + "  Place: " + res.place + "<br>" + "  Description: " + res.description + "<br>").append( "<br>" );
+        $("#bridesData").append("Bride: "+ res.brideID+ "<br>"+ res.brideName + "<br>" + "  email: " + res.email + "<br>" + " password: " + res.password + "<br>" + "  groomName: " + res.groomName + "<br>").append( "<br>" );
+      });
+    });
+  });
+}
+
+function getGroomData(){
+  $("#groomData").text("");
+  $.getJSON("groom.json", function(data){
+    $.each(data, function(i, item){
+      $.each(item, function(j, res){
+        $("#groomData").append("groom: " +res.groomID+ "<br>"+ res.groomName + "<br>" + "  email: " + res.email + "<br>" + " password: " + res.password + "<br>" + "  groomName: " + res.brideName + "<br>").append( "<br>" );
       });
     });
   });
@@ -17,18 +28,19 @@ function openWindowOrNo(theForm){
 
 
 function validateForm(){
-     var userName = document.forms["myForm"]["fName"].value;
-     var surName= document.forms["myForm"]["surName"].value;
-     var mail= document.forms["myForm"]["email"].value;
+     var email = document.forms["myForm"]["email"].value;
+     var name= document.forms["myForm"]["name"].value;
+     var partner= document.forms["myForm"]["partner"].value;
      var passw1 = document.forms["myForm"]["password"].value;
-     var pass2 = document.forms["myForm"]["Repassword"].value;
+     var pass2 = document.forms["myForm"]["repassword"].value;
      var flag=true;
-     var f1=  validName(userName);
-     var f2= validSurName(surName);
-     var f3= EmailValidation(mail);
-     var f45=passwordValidation(passw1,pass2);
+	 // check name the register person and his/her partener
+     var f1=  validName(name);
+	 var f2=  validName(partner);
+     var f3= EmailValidation(email);
+     var f4=passwordValidation(passw1,pass2);
 
-     if(f1 && f2 && f3 && f45 ){
+     if(f1 && f2 && f3 && f4 && validateGender() ){
             emptyData();
             alert("U've Regisetred successufuly ");
             return true;
@@ -37,7 +49,7 @@ function validateForm(){
   }//endValidator
   function emptyData(){
     document.getElementById("nameError").innerHTML=" ";
-    document.getElementById("SurnameError").innerHTML=" ";
+    document.getElementById("partnerError").innerHTML=" ";
     document.getElementById("EmailError").innerHTML=" ";
     document.getElementById("passError").innerHTML=" ";
     document.getElementById("RePassError").innerHTML=" ";
@@ -68,19 +80,19 @@ function validateForm(){
       }
 
 
-      function validSurName(str){
+      function validPartnerName(str){
         if (str== null || str == "")
            {
-             document.getElementById("SurnameError").innerHTML="SurName must be filled out";
+             document.getElementById("partnerError").innerHTML="Partner Name must be filled out";
            return false;
           }
           else{
             var pattern = /^[a-zA-Z]+$/;
             if(!pattern.test(str)){
-              document.getElementById("SurnameError").innerHTML="insert a valid surName";
+              document.getElementById("partnerError").innerHTML="insert a valid partner Name";
               return false;
             }else{
-              document.getElementById("SurnameError").innerHTML=" ";
+              document.getElementById("partnerError").innerHTML=" ";
 
             }
           }
@@ -126,6 +138,21 @@ function validateForm(){
            }
            return false;
     }
+	function validateGender(){
+		if(document.getElementById("maleId").checked ){
+			// read data from grrom data
+			///
+			///
+			return true;
+		}else{
+			if(	document.getElementById("femaleId").checked){
+				/// read data from brides data 
+				////
+				////
+				return true;
+			}
+		}
+	}
 
     function checkPass(pas1){
       var passw=  /^[A-Za-z][@#]\w{7,14}$/;  
@@ -136,8 +163,8 @@ function validateForm(){
     }
 	
     function validateUser(){
-      var username = document.forms["myForm1"]["userName"].value;
-      var pasw = document.forms["myForm1"]["psw"].value;
+      var username = document.forms["myForm"]["userName"].value;
+      var pasw = document.forms["myForm"]["psw"].value;
                if( username == "Admin@gmail.com" && pasw == "Admin" ){
                     return true;
                }

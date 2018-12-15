@@ -1,1 +1,10 @@
-{}
+{
+  "groom": [
+    {
+      "groomName": "danny",
+      "email": "",
+      "password": "",
+      "brideName": "reta"
+    }
+  ]
+}
