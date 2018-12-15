@@ -5,6 +5,7 @@ body {
   /* Chrome 10-25, Safari 5.1-6 */
   /*background: linear-gradient(to right, #0052D4, #65C7F7, #F9D5D7);*/
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 /* this css for the header*/
 .navbar {
@@ -37,7 +38,7 @@ a.navbar-brand{
 
 p.form-title
 {
-    font-family: 'Open Sans' , sans-serif;
+    font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
     font-size: 20px;
     font-weight: 600;
     text-align: center;
@@ -45,4 +46,8 @@ p.form-title
     margin-top: 5%;
     text-transform: uppercase;
     letter-spacing: 4px;
+}
+.ever{
+  width: 45%;
+  height: 45%;
 }
