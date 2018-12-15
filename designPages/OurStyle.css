@@ -1,7 +1,8 @@
 body {
     font: 400 15px Lato, sans-serif;
     line-height: 1.8;
-    color: #cc99ff;
+    /*color: #cc99ff;*/
+	color: #660099;
     background-color:#F9D5D7;
 }
 /* this css for pages title*/
@@ -12,6 +13,11 @@ h2 {
     color: #660099;
     font-weight: 600;
     margin-bottom: 30px;
+}
+.pFonts{
+	font-size:24px;
+	    font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+
 }
 h4 {
     font-size: 19px;
@@ -49,19 +55,17 @@ h4 {
   text-align: center;
 }
 
-.jumbotron button.make_plan {
+ button.make_plan {
     font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
   border: 2px solid #FB88D1;
-  color: #F668C2;
+  color: #660066;
   -webkit-text-stroke: 0.1px #F2D8C1;
 font-size:24px;
   position: absolute;
-  left:    215px;
-  bottom:  85px;
   text-align: left;
 }
 a.make_plan{
-  color: #F668C2;
+  color: #660066;
 }
 /* this css for the sections*/
 .container-fluid {
