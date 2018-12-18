@@ -2,7 +2,13 @@
 body{
    background-color:#F9D5D7;
 }
-
+h2{ font-size: 24px;
+    text-transform: uppercase;
+    font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+    color: #660099;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
 #palnTitle {
     font-size: 24px;
     text-transform: uppercase;
@@ -110,12 +116,10 @@ input:checked + .slider:before {
 
 /* form css*/
 .formBox{
-	margin-top: 90px;
-	padding: 50px;
+	margin-top: 30px ;
+	padding: 5px;
 }
 .formBox  h1{
-	margin: 0;
-	padding: 0;
 	text-align: center;
 	margin-bottom: 50px;
 	text-transform: uppercase;
@@ -124,7 +128,7 @@ input:checked + .slider:before {
 .inputBox{
 	position: relative;
 	box-sizing: border-box;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 }
 .inputBox .inputText{
 	position: absolute;
@@ -178,7 +182,7 @@ textarea{
 }
 
 .date-container {
-    padding: 0px 40px;
+    padding: 0px 10px;
 }
 
 .date-picker h2, .date-picker h4 {

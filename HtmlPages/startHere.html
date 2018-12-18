@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
   <!-- Form links-->
 
 
@@ -45,7 +48,7 @@
       $(".slideanim").each(function(){
         var pos = $(this).offset().top;
         var winTop = $(window).scrollTop();
-          if (pos < winTop + 600) {
+          if (pos < winTop + 200) {
             $(this).addClass("slide");
           }
       });
@@ -111,11 +114,15 @@
 <div id="tasksBox" class="container-fluid text-center">
   <div class="list container">
   	<div class="row">
-      <div class="col-md-4">
+	
 
+      <div class="col-sm-4">
+	    <div class="pager" style="margin:100px 0">
+		<li class="previous"><a href="MarriagePlanning.html" >Previous</a></li>
+		</div>
       </div>
-  	    <div class="col-md-4">
-    	    <div class="card" style="margin:50px 0">
+  	  <div class="col-sm-4">
+    	    <div class="card" style="margin:60px 0">
               <p class="title">Choose your wedding tasks</p>
               <ul class="list-group list-group-flush">
                 <li id="taskName1" class="list-group-item">
@@ -183,26 +190,38 @@
               </ul>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-4">
+		   	    <div   class="pager" style="margin:100px 0">
+		 			  <li class="next"><a href="#infoBox">Next</a></li>
+					  </div>
 
         </div>
     </div>
-    <ul class="pager">
-<li class="previous"><a href="MarriagePlanning.html">Previous</a></li>
-  <li class="next"><a href="#infoBox">Next</a></li>
+    <ul >
 </ul>
 <hr>
 
 <!-- container step 2-->
 <div id="infoBox" class="container-fluid text-center">
+   
+	 
+	
+
   <!-- Form template-->
   <div class="container-fluid">
 		<div class="container">
+		<div class="col-sm-4">
+		  <div class="pager" style="margin:100px 0">
+		  <li class="previous"><a href="#tasksBox">Previous</a></li>
+		  </div>
+		  </div>
+		  
+		   <div class="col-sm-4">
       <!-- general info -->
       <div class="formBox">
 				<form>
-						<div class="row">
-              <p class="title">Details</p>
+				<div class="row">
+              <p  style="margin:100px 0" class="title">Details</p>
 							<div class="col-sm-12">
 							</div>
 						</div>
@@ -211,14 +230,14 @@
 							<div class="col-sm-6">
 								<div class="inputBox ">
 									<div class="inputText"></div>
-									<input id="brideName" type="text" name="" class="input" placeholder="The bride's Name">
+									<input id="brideName" type="text" name="" style="width:'70%'"class="input" placeholder="The bride's Name">
 								</div>
 							</div>
 
 							<div class="col-sm-6">
 								<div class="inputBox">
 									<div class="inputText"></div>
-									<input id="groomName" type="text" name="" class="input" placeholder="The groom's Name">
+									<input id="groomName" type="text" name="" style="width:'70%'" class="input" placeholder="The groom's Name">
 								</div>
 							</div>
 						</div>
@@ -227,80 +246,155 @@
 							<div class="col-sm-6">
 								<div class="inputBox">
 									<div  class="inputText"></div>
-									<input id="budget" type="text" name="" class="input" placeholder="Budget">
+									<input id="budget" type="text" name="" style="width:'70%'" class="input" placeholder="Budget">
 								</div>
 							</div>
 
 							<div class="col-sm-6">
 								<div class="inputBox">
 									<div class="inputText"></div>
-									<input id="mobile" type="text" name="" class="input" placeholder="Mobile">
+									<input id="mobile" type="text" name="" style="width:'70%'" class="input" placeholder="Mobile">
 								</div>
 							</div>
 						</div>
             <!-- select date -->
             <div class="row">
-                    <div class="col-sm-offset-4 col-sm-4">
-                        <h2>Wedding Date</h2>
+                    <div class="col-sm-4">
+                        <p class="title"  style="margin:40px 0" >Wedding Date</p>
                         <hr/>
                         <div class="date-picker"  data-date="2014-02-03">
                             <div class="date-container">
                                 <h3 id="thisDate" class="date">
+								<div class="row">
                                     <span data-toggle="datepicker" data-method="subtract" data-type="d" class="fa fa-angle-left"></span>
-                                    <span class="text">17th</span>
+                                    <span class="text-center" >17th</span>
                                     <span data-toggle="datepicker" data-method="add" data-type="d" class="fa fa-angle-right"></span>
+									</div>
                                 </h3>
-                                <h2 id="thisMonth" class="month">
+                                <h3 id="thisMonth" class="month">
+								<div class="row">
                                     <span data-toggle="datepicker" data-method="subtract" data-type="M" class="fa fa-angle-left"></span>
                                     <span class="text">December</span>
                                     <span data-toggle="datepicker" data-method="add" data-type="M" class="fa fa-angle-right"></span>
-                                </h2>
+									</div >
+                                </h3>
                                 <h3 id="thisYear" class="year">
+								<div class="row">
                                     <span data-toggle="datepicker" data-method="subtract" data-type="y" class="fa fa-angle-left"></span>
                                     <span class="text">2014</span>
                                     <span data-toggle="datepicker" data-method="add" data-type="y" class="fa fa-angle-right"></span>
+									</div>
                                 </h3>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+			</div>
+			 <div class="col-sm-4">
+			  <!-- <li class="next"><a href="#planBox">Next</a></li> -->
+			  <div class="pager" style="margin:100px 0">
+			  <li class="next"><a  id="printing" onclick="printPlan()" href="#planBox">Next</a></li>
+			  </div>
+			  </div>
             <input type="hidden" id="dateinput" name="date"></input>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.js"></script>
 				</form>
 			</div>
 		</div>
-  <ul class="pager">
-  <li class="previous"><a href="#tasksBox">Previous</a></li>
-  <!-- <li class="next"><a href="#planBox">Next</a></li> -->
-  <li class="next"><a  id="printing" onclick="printPlan()" href="#planBox">Next</a></li>
-  </ul>
+
 <div>
 <hr>
 <!-- container step 3-->
 <div id="planBox" class="container-fluid text-center">
+ <div class="col-sm-4">
+  <ul class="pager" style="margin:100px 0">
+  <li class="previous"><a href="#infoBox">Previous</a></li>
+  </ul>
+  </div>
+<div class="col-sm-4">
+ <div id="printTableID" class="table"  style="margin:100px 0">
   <!-- create plan table -->
 
-  <h3 id="palnTitle"></h3>
+  <h2 id="palnTitle"></h2>
   <h4 id="wedDate"></h4>
-  <table id="myTbl2" border="1" cellpadding="3">
+  <table class="table" id="myTbl2" border="1" cellpadding="3">
   </table>
   <p id="comment"></p>
-  <center>
-    <button class="btn btn-primary hidden-print" onclick="myFunctionPrint()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button>
-  </center>
+ 
+  <script type="text/javascript">
+    function toPDF() {
+    var pdf = new jsPDF('p', 'pt', 'letter');
+    // source can be HTML-formatted string, or a reference
+    // to an actual DOM element from which the text will be scraped.
+    source = $('#printTableID')[0];
+
+    // we support special element handlers. Register them with jQuery-style 
+    // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
+    // There is no support for any other type of selectors 
+    // (class, of compound) at this time.
+    specialElementHandlers = {
+        // element with id of "bypass" - jQuery style selector
+        '#bypassme': function (element, renderer) {
+            // true = "handled elsewhere, bypass text extraction"
+            return true
+        }
+    };
+    margins = {
+        top: 80,
+        bottom: 60,
+        left: 10,
+        width: 700
+    };
+    // all coords and widths are in jsPDF instance's declared units
+    // 'inches' in this case
+    pdf.fromHTML(
+    source, // HTML string or DOM elem ref.
+    margins.left, // x coord
+    margins.top, { // y coord
+        'width': margins.width, // max width of content on PDF
+        'elementHandlers': specialElementHandlers
+    },
+
+    function (dispose) {
+        // dispose: object with X, Y of the last line add to the PDF 
+        //          this allow the insertion of new lines after html
+        pdf.save('weddingDetails.pdf');
+    }, margins);
+}
+    </script>
+	
+	<script>
+	
+	 function Export() {
+            html2canvas(document.getElementById('printTableID'), {
+                onrendered: function (canvas) {
+                    var data = canvas.toDataURL();
+                    var docDefinition = {
+                        content: [{
+                            image: data,
+                            width: 500
+                        }]
+                    };
+                    pdfMake.createPdf(docDefinition).download("Table.pdf");
+                }
+            });
+        }
+		
+	</script>
   <script>
+  
   function myFunctionPrint(planBox) {
-      var content = document.getElementById("planBox").innerHTML;
-      var mywindow = window.open('', 'Print', 'height=600,width=800');
+      var content = document.getElementById("printTableID").innerHTML;
+      var mywindow = window.open('', 'Print', 'height=900,width=900');
       mywindow.document.write('<html><head><title>Print</title>');
       mywindow.document.write('</head><body >');
       mywindow.document.write(content);
       mywindow.document.write('</body></html>');
       mywindow.document.close();
-      mywindow.focus()
+      mywindow.focus();
       mywindow.print();
-      mywindow.close();
+	  mywindow.save();
       return true;
     }
     function printPlan(){
@@ -315,39 +409,39 @@
       var myBudget = document.getElementById("budget").value;
       var currBudget = myBudget
       var text = "";
-      text += "<tr>" +  "<td>" + "Task" +  "</td>" + "<td>" + "Start Date" +  "</td>" + "<td>" + "Estimated budget" +  "</td>" + "</tr>";
+      text += "<tr  >" +  "<td>" + "Task" +  "</td>" + "<td>" + "Start Date" +  "</td>" + "<td>" + "Estimated budget" +  "</td>" + "</tr>";
       if(document.getElementById("task1").checked == true){
-          text += "<tr>" +  "<td>" + "Find and book your venue" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.1) +  "</td>" + "</tr>";
+          text += "<tr"+ " class="+"danger"+">" +  "<td>" + "Find and book your venue" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.1) +  "</td>" + "</tr>";
           currBudget -= myBudget*0.1;
       }
       if(document.getElementById("task2").checked == true){
           weddingDate.setDate(weddingDate.getDate() + 15);
-          text += "<tr>" +  "<td>" + "Find and order your wedding invitations and start your guest list" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.03) +  "</td>" + "</tr>";
+          text += "<tr"+ " class="+"info"+">" +  "<td>" + "Find and order your wedding invitations and start your guest list" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.03) +  "</td>" + "</tr>";
           currBudget -= myBudget*0.03;
       }
       if(document.getElementById("task3").checked == true){
           weddingDate.setDate(weddingDate.getDate() + 15);
-          text += "<tr>" +  "<td>" + "Find and book your caterer" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.22) +  "</td>" + "</tr>";
+          text += "<tr"+ " class="+"warning"+">" +  "<td>" + "Find and book your caterer" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.22) +  "</td>" + "</tr>";
           currBudget -= myBudget*0.22;
       }
       if(document.getElementById("task4").checked == true){
           weddingDate.setDate(weddingDate.getDate() + 10);
-          text += "<tr>" +  "<td>" + "Find and book your photographer" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.04) +  "</td>" + "</tr>";
+          text += "<tr"+ " class="+"success"+">" +  "<td>" + "Find and book your photographer" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.04) +  "</td>" + "</tr>";
           currBudget -= myBudget*0.04;
       }
       if(document.getElementById("task5").checked == true){
           weddingDate.setDate(weddingDate.getDate() + 10);
-          text += "<tr>" +  "<td>" + "Find and book your videographer" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.03) +  "</td>" + "</tr>";
+          text += "<tr"+ " class="+"warning"+">" +  "<td>" + "Find and book your videographer" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.03) +  "</td>" + "</tr>";
           currBudget -= myBudget*0.03;
       }
       if(document.getElementById("task6").checked == true){
           weddingDate.setDate(weddingDate.getDate() + 15);
-          text += "<tr>" +  "<td>" + "Research songs and book you favorate DJ" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.07) +  "</td>" + "</tr>";
+          text += "<tr"+ " class="+"info"+">" +  "<td>" + "Research songs and book you favorate DJ" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.07) +  "</td>" + "</tr>";
           currBudget -= myBudget*0.07;
       }
       if(document.getElementById("task7").checked == true){
           weddingDate.setDate(weddingDate.getDate() + 10);
-          text += "<tr>" +  "<td>" + "Find and book your hair and makeup vendor" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.04) +  "</td>" + "</tr>";
+          text += "<tr"+ " class="+"success"+">" +  "<td>" + "Find and book your hair and makeup vendor" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.04) +  "</td>" + "</tr>";
           currBudget -= myBudget*0.04;
       }
       if(document.getElementById("task8").checked == true){
@@ -357,17 +451,17 @@
       }
       if(document.getElementById("task9").checked == true){
           weddingDate.setDate(weddingDate.getDate() + 10);
-          text += "<tr>" +  "<td>" + "Purchase your wedding rings" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.13) +  "</td>" + "</tr>";
+          text += "<tr"+ " class="+"warning"+">" +  "<td>" + "Purchase your wedding rings" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.13) +  "</td>" + "</tr>";
           currBudget -= myBudget*0.13;
       }
       if(document.getElementById("task10").checked == true){
           weddingDate.setDate(weddingDate.getDate() + 7);
-          text += "<tr>" +  "<td>" + "Find and book your florist" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.04) +  "</td>" + "</tr>";
+          text += "<tr"+ " class="+"info"+">" +  "<td>" + "Find and book your florist" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.04) +  "</td>" + "</tr>";
           currBudget -= myBudget*0.04;
       }
       if(document.getElementById("task11").checked == true){
           weddingDate.setDate(weddingDate.getDate() + 12);
-          text += "<tr>" +  "<td>" + "Find and order your wedding cake" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.02) +  "</td>" + "</tr>";
+          text += "<tr"+" class="+"success"+">" +  "<td>" + "Find and order your wedding cake" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.02) +  "</td>" + "</tr>";
           currBudget -= myBudget*0.02;
       }
       if(document.getElementById("task12").checked == true){
@@ -377,7 +471,7 @@
       }
       if(document.getElementById("task13").checked == true){
           weddingDate.setDate(weddingDate.getDate() + 15);
-          text += "<tr>" +  "<td>" + "Plan and book your honeymoon" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.15) +  "</td>" + "</tr>";
+          text += "<tr "+ " class="+"info"+">" +  "<td>" + "Plan and book your honeymoon" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.15) +  "</td>" + "</tr>";
           currBudget -= myBudget*0.15;
       }
       document.getElementById("myTbl2").innerHTML = text;
@@ -386,9 +480,14 @@
       }
     }
   </script>
-  <ul class="pager">
-  <li class="previous"><a href="#infoBox">Previous</a></li>
-  </ul>
-<div>
+  </div>
+   <center>
+    <button class="btn btn-primary hidden-print" onclick="myFunctionPrint()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button>
+	<!--button class="btn btn-primary " onclick= "Export()" ><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download </button-->
+
+
+  </center>
+</div>
+</div>
 </body>
 </html>
