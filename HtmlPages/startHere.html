@@ -29,26 +29,21 @@
       if (this.hash !== "") {
         // Prevent default anchor click behavior
         event.preventDefault();
-
         // Store hash
         var hash = this.hash;
-
         // Using jQuery's animate() method to add smooth page scroll
         // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
         $('html, body').animate({
           scrollTop: $(hash).offset().top
         }, 900, function(){
-
           // Add hash (#) to URL when done scrolling (default click behavior)
           window.location.hash = hash;
         });
       } // End if
     });
-
     $(window).scroll(function() {
       $(".slideanim").each(function(){
         var pos = $(this).offset().top;
-
         var winTop = $(window).scrollTop();
           if (pos < winTop + 600) {
             $(this).addClass("slide");
@@ -68,42 +63,32 @@
   <!-- Date JS-->
   <script type="text/javascript">
     $(document).ready(function() {
-
     $('.date-picker').each(function () {
         var $datepicker = $(this),
             cur_date = ($datepicker.data('date') ? moment($datepicker.data('date'), "YYYY/MM/dd") : moment());
-
         function updateDisplay(cur_date) {
             $('#dateinput').val(cur_date);
-
             $datepicker.find('.date-container > .date > .text').text(cur_date.format('Do'));
             $datepicker.find('.date-container > .month > .text').text(cur_date.format('MMMM'));
             $datepicker.find('.date-container > .year > .text').text(cur_date.format('YYYY'));
             $datepicker.data('date', cur_date.format('YYYY/MM/DD'));
         }
-
         updateDisplay(moment());
-
         $datepicker.on('click', '[data-toggle="datepicker"]', function(event) {
             event.preventDefault();
-
             var cur_date = moment($(this).closest('.date-picker').data('date'), "YYYY/MM/DD"),
                 type = ($(this).data('type') ? $(this).data('type') : "date"),
                 method = ($(this).data('method') ? $(this).data('method') : "add"),
                 amt = ($(this).data('amt') ? $(this).data('amt') : 1);
-
             if (method == "add") {
                 var duration = moment.duration(1,type);
                 cur_date = cur_date.add(duration);
             }else if (method == "subtract") {
                 cur_date = cur_date.subtract(1,type);
             }
-
             updateDisplay(cur_date);
         });
-
     });
-
 });
   </script>
 </head>
@@ -314,20 +299,16 @@
       mywindow.document.write('</head><body >');
       mywindow.document.write(content);
       mywindow.document.write('</body></html>');
-
       mywindow.document.close();
       mywindow.focus()
       mywindow.print();
       mywindow.close();
       return true;
     }
-
     function printPlan(){
-
       // var dt = new Date(document.getElementById("dateinput").value);
       // dt.setDate( dt.getDate() - 10 );
       // document.getElementById("test").innerHTML = dt;
-
       var pTitle = document.getElementById("brideName").value + " and " + document.getElementById("groomName").value + " wedding plan" + "<br>";
       document.getElementById("palnTitle").innerHTML = pTitle;
       var weddingDate = new Date(document.getElementById("dateinput").value);
