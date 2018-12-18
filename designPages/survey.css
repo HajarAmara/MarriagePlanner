@@ -23,7 +23,7 @@ a.navbar-brand{
 }
 
 .Introduction{
-  font-family: Cambria,'Palatino Linotype','Book Antiqua','URW Palladio L',serif;
+  font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
   color:#484086;
 }
 h2.survey{
@@ -31,7 +31,7 @@ h2.survey{
 }
 h4.start{
   font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
-  color:#FBC82C;
+  color:#9CD6C9;
 }
 
 .inputBox{

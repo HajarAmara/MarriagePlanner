@@ -13,14 +13,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!-- Form links-->
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 
   <!-- select date links-->
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <!-- plan table script linl-->
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
   <link href="../designPages/startHere.css" rel="stylesheet" type="text/css">
   <script>
@@ -104,92 +102,88 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="MarriagePlanning.html" style="float:right;"><img src="pics/HouseHeart.png" width="20px" height="20px" style="float:left;" alt="" hspace="10">Home</a>
+      <a class="navbar-brand" href="MarriagePlanning.html" style="float:right;"><img src="../pics/HouseHeart.png" width="20px" height="20px" style="float:left;" alt="" hspace="10">Home</a>
     </div>
   </div>
 </nav>
 
 <!-- Container (step 1) -->
-<div id="tasksBox" class="container-fluid center">
+<div id="tasksBox" class="container-fluid text-center">
   <div class="list container">
   	<div class="row">
       <div class="col-md-4">
 
       </div>
-  	      <div id="infoID" class="col-md-4">
+  	    <div class="col-md-4">
     	    <div class="card" style="margin:50px 0">
               <p class="title">Choose your wedding tasks</p>
               <ul class="list-group list-group-flush">
-                <li id="venueId" class="list-group-item">
+                <li id="taskName1" class="list-group-item">
                   Venue
                   <i class='fas fa-place-of-worship'></i>
-                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
+                  <label class="switch "><input id="task1" type="checkbox" class="default"><span class="slider"></span></label>
                 </li>
-                <li id="cateringId"  class="list-group-item">
-                  Catering
-
-                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
-                </li>
-                <li id="photographyId"  class="list-group-item">
-                  Photography
-                  <i class='fas fa-camera'></i>
-                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
-                </li>
-                <li id="flowersId"  class="list-group-item">
-                  Flowers
-                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
-                </li>
-                <li id="cakeId"  class="list-group-item">
-                  Cake
-                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
-                </li>
-                <li id="dressId"  class="list-group-item">
-                  Dress and Attire
-                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
-                </li>
-                <li id="cermonyId"  class="list-group-item">
-                  Ceremony Music
-                  <i class="fa fa-music"></i>
-                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
-                </li>
-                <li id="invitId"  class="list-group-item">
+                <li id="taskName2" class="list-group-item">
                   Invitations
                   <i class='far fa-envelope'></i>
-                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
+                  <label class="switch "><input id="task2" type="checkbox" class="default"><span class="slider"></span></label>
                 </li>
-                <li id="jewelryId"  class="list-group-item">
-                  Jewelry
-                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
+                <li id="taskName3" class="list-group-item">
+                  Catering
+                  <span class="glyphicon glyphicon-cutlery"></span>
+                  <label class="switch "><input id="task3" type="checkbox" class="default"><span class="slider"></span></label>
                 </li>
-                <li id="beatyId"  class="list-group-item">
-                  Beauty and Health
-                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
+                <li id="taskName4" class="list-group-item">
+                  Photography
+                  <i class='fas fa-camera'></i>
+                  <label class="switch "><input id="task4" type="checkbox" class="default"><span class="slider"></span></label>
                 </li>
-                <li id="favorsId"  class="list-group-item">
-                  favors and gifts
-                  <i class="fa fa-gift"></i>
-                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
-                </li>
-                <li id="ravelId"  class="list-group-item">
-                  Travel
-                  <i class='fas fa-plane'></i>
-                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
-                </li>
-                <li id="videoId"  class="list-group-item">
+                <li id="taskName5" class="list-group-item">
                   videography
                   <i class='fas fa-video'></i>
-                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
+                  <label class="switch "><input id="task5" type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+                <li id="taskName6" class="list-group-item">
+                  Ceremony Music
+                  <i class="fa fa-music"></i>
+                  <label class="switch "><input id="task6" type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+                <li id="taskName7" class="list-group-item">
+                  Beauty and Health
+                  <label class="switch "><input id="task7" type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+                <li id="taskName8" class="list-group-item">
+                  Dress and Attire
+                  <label class="switch "><input id="task8" type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+                <li id="taskName9" class="list-group-item">
+                  Jewelry
+                  <i class='fas fa-gem'></i>
+                  <label class="switch "><input id="task9" type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+                <li id="taskName10" class="list-group-item">
+                  Flowers
+                  <label class="switch "><input id="task10" type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+                <li id="taskName11" class="list-group-item">
+                  Cake
+                  <i class='fas fa-birthday-cake'></i>
+                  <label class="switch "><input id="task11" type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+                <li id="taskNameName12" class="list-group-item">
+                  favors and gifts
+                  <i class="fa fa-gift"></i>
+                  <label class="switch "><input id="task12" type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+                <li id="task1Name13" class="list-group-item">
+                  Honeymoon
+                  <i class='fas fa-plane'></i>
+                  <label class="switch "><input id="task13" type="checkbox" class="default"><span class="slider"></span></label>
                 </li>
               </ul>
           </div>
         </div>
-		<script>
-		var text= function() {
-		   document.getElementById("planBox").innerHTML="hi "+<br>;
-		</script>
         <div class="col-md-4">
-		
- 
 
         </div>
     </div>
@@ -197,9 +191,10 @@
 <li class="previous"><a href="MarriagePlanning.html">Previous</a></li>
   <li class="next"><a href="#infoBox">Next</a></li>
 </ul>
+<hr>
 
-<div id="infoBox" class="container-fluid center">
-  <h1>here 1</h1>
+<!-- container step 2-->
+<div id="infoBox" class="container-fluid text-center">
   <!-- Form template-->
   <div class="container-fluid">
 		<div class="container">
@@ -207,23 +202,23 @@
       <div class="formBox">
 				<form>
 						<div class="row">
+              <p class="title">Details</p>
 							<div class="col-sm-12">
-								<h1>Details</h1>
 							</div>
 						</div>
 
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="inputBox ">
-									<div class="inputText">Bride Name</div>
-									<input type="text" name="" class="input">
+									<div class="inputText"></div>
+									<input id="brideName" type="text" name="" class="input" placeholder="The bride's Name">
 								</div>
 							</div>
 
 							<div class="col-sm-6">
 								<div class="inputBox">
-									<div class="inputText">Groom Name</div>
-									<input type="text" name="" class="input">
+									<div class="inputText"></div>
+									<input id="groomName" type="text" name="" class="input" placeholder="The groom's Name">
 								</div>
 							</div>
 						</div>
@@ -231,15 +226,15 @@
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="inputBox">
-									<div class="inputText">Budget</div>
-									<input type="text" name="" class="input">
+									<div  class="inputText"></div>
+									<input id="budget" type="text" name="" class="input" placeholder="Budget">
 								</div>
 							</div>
 
 							<div class="col-sm-6">
 								<div class="inputBox">
-									<div class="inputText">Mobile</div>
-									<input type="text" name="" class="input">
+									<div class="inputText"></div>
+									<input id="mobile" type="text" name="" class="input" placeholder="Mobile">
 								</div>
 							</div>
 						</div>
@@ -250,17 +245,17 @@
                         <hr/>
                         <div class="date-picker"  data-date="2014-02-03">
                             <div class="date-container">
-                                <h3 class="date">
+                                <h3 id="thisDate" class="date">
                                     <span data-toggle="datepicker" data-method="subtract" data-type="d" class="fa fa-angle-left"></span>
                                     <span class="text">17th</span>
                                     <span data-toggle="datepicker" data-method="add" data-type="d" class="fa fa-angle-right"></span>
                                 </h3>
-                                <h2 class="month">
+                                <h2 id="thisMonth" class="month">
                                     <span data-toggle="datepicker" data-method="subtract" data-type="M" class="fa fa-angle-left"></span>
                                     <span class="text">December</span>
                                     <span data-toggle="datepicker" data-method="add" data-type="M" class="fa fa-angle-right"></span>
                                 </h2>
-                                <h3 class="year">
+                                <h3 id="thisYear" class="year">
                                     <span data-toggle="datepicker" data-method="subtract" data-type="y" class="fa fa-angle-left"></span>
                                     <span class="text">2014</span>
                                     <span data-toggle="datepicker" data-method="add" data-type="y" class="fa fa-angle-right"></span>
@@ -277,11 +272,120 @@
 		</div>
   <ul class="pager">
   <li class="previous"><a href="#tasksBox">Previous</a></li>
-  <li class="next"><a href="#planBox">Next</a></li>
+  <!-- <li class="next"><a href="#planBox">Next</a></li> -->
+  <li class="next"><a  id="printing" onclick="printPlan()" href="#planBox">Next</a></li>
   </ul>
 <div>
-<div id="planBox" class="container-fluid center">
-  <h1>here 2</h1>
+<hr>
+<!-- container step 3-->
+<div id="planBox" class="container-fluid text-center">
+  <!-- create plan table -->
+
+  <h3 id="palnTitle"></h3>
+  <h4 id="wedDate"></h4>
+  <table id="myTbl2" border="1" cellpadding="3">
+  </table>
+  <p id="comment"></p>
+  <center>
+    <button class="btn btn-primary hidden-print" onclick="myFunctionPrint()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button>
+  </center>
+  <script>
+  function myFunctionPrint(planBox) {
+      var content = document.getElementById("planBox").innerHTML;
+      var mywindow = window.open('', 'Print', 'height=600,width=800');
+      mywindow.document.write('<html><head><title>Print</title>');
+      mywindow.document.write('</head><body >');
+      mywindow.document.write(content);
+      mywindow.document.write('</body></html>');
+      mywindow.document.close();
+      mywindow.focus()
+      mywindow.print();
+      mywindow.close();
+      return true;
+    }
+    function printPlan(){
+      // var dt = new Date(document.getElementById("dateinput").value);
+      // dt.setDate( dt.getDate() - 10 );
+      // document.getElementById("test").innerHTML = dt;
+      var pTitle = document.getElementById("brideName").value + " and " + document.getElementById("groomName").value + " wedding plan" + "<br>";
+      document.getElementById("palnTitle").innerHTML = pTitle;
+      var weddingDate = new Date(document.getElementById("dateinput").value);
+      document.getElementById("wedDate").innerHTML = " wedding date: " + weddingDate.toDateString() + "<br>";
+      weddingDate.setMonth(weddingDate.getMonth() - 6);
+      var myBudget = document.getElementById("budget").value;
+      var currBudget = myBudget
+      var text = "";
+      text += "<tr>" +  "<td>" + "Task" +  "</td>" + "<td>" + "Start Date" +  "</td>" + "<td>" + "Estimated budget" +  "</td>" + "</tr>";
+      if(document.getElementById("task1").checked == true){
+          text += "<tr>" +  "<td>" + "Find and book your venue" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.1) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.1;
+      }
+      if(document.getElementById("task2").checked == true){
+          weddingDate.setDate(weddingDate.getDate() + 15);
+          text += "<tr>" +  "<td>" + "Find and order your wedding invitations and start your guest list" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.03) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.03;
+      }
+      if(document.getElementById("task3").checked == true){
+          weddingDate.setDate(weddingDate.getDate() + 15);
+          text += "<tr>" +  "<td>" + "Find and book your caterer" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.22) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.22;
+      }
+      if(document.getElementById("task4").checked == true){
+          weddingDate.setDate(weddingDate.getDate() + 10);
+          text += "<tr>" +  "<td>" + "Find and book your photographer" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.04) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.04;
+      }
+      if(document.getElementById("task5").checked == true){
+          weddingDate.setDate(weddingDate.getDate() + 10);
+          text += "<tr>" +  "<td>" + "Find and book your videographer" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.03) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.03;
+      }
+      if(document.getElementById("task6").checked == true){
+          weddingDate.setDate(weddingDate.getDate() + 15);
+          text += "<tr>" +  "<td>" + "Research songs and book you favorate DJ" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.07) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.07;
+      }
+      if(document.getElementById("task7").checked == true){
+          weddingDate.setDate(weddingDate.getDate() + 10);
+          text += "<tr>" +  "<td>" + "Find and book your hair and makeup vendor" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.04) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.04;
+      }
+      if(document.getElementById("task8").checked == true){
+          weddingDate.setMonth(weddingDate.getMonth() + 1);
+          text += "<tr>" +  "<td>" + " Find and order your wedding dress, suit, or tux" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.1) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.1;
+      }
+      if(document.getElementById("task9").checked == true){
+          weddingDate.setDate(weddingDate.getDate() + 10);
+          text += "<tr>" +  "<td>" + "Purchase your wedding rings" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.13) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.13;
+      }
+      if(document.getElementById("task10").checked == true){
+          weddingDate.setDate(weddingDate.getDate() + 7);
+          text += "<tr>" +  "<td>" + "Find and book your florist" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.04) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.04;
+      }
+      if(document.getElementById("task11").checked == true){
+          weddingDate.setDate(weddingDate.getDate() + 12);
+          text += "<tr>" +  "<td>" + "Find and order your wedding cake" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.02) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.02;
+      }
+      if(document.getElementById("task12").checked == true){
+          weddingDate.setDate(weddingDate.getDate() + 7);
+          text += "<tr>" +  "<td>" + "Order your wedding favors, purchase gifts for your wedding party" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.03) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.03;
+      }
+      if(document.getElementById("task13").checked == true){
+          weddingDate.setDate(weddingDate.getDate() + 15);
+          text += "<tr>" +  "<td>" + "Plan and book your honeymoon" +  "</td>" + "<td>" + weddingDate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.15) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.15;
+      }
+      document.getElementById("myTbl2").innerHTML = text;
+      if( currBudget > 0 ){
+        document.getElementById("comment").innerHTML = "<br>" + "you still have " + parseInt(currBudget) + " extra in your budget" + "<br>" + "You can add more tasks";
+      }
+    }
+  </script>
   <ul class="pager">
   <li class="previous"><a href="#infoBox">Previous</a></li>
   </ul>
