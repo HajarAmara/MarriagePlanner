@@ -39,6 +39,10 @@ p.title {
   -webkit-text-stroke: 1px #D1CFCF;
   text-align: center;
 }
+#wedDate{
+  font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+  color: #660099;
+}
 /* steps container*/
 .list-group{
   padding: 19px;
