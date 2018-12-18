@@ -225,15 +225,15 @@
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="inputBox ">
-									<div class="inputText">The bride's Name</div>
-									<input type="text" name="" class="input">
+									<div class="inputText"></div>
+									<input id="brideName" type="text" name="" class="input" placeholder="The bride's Name">
 								</div>
 							</div>
 
 							<div class="col-sm-6">
 								<div class="inputBox">
-									<div class="inputText">The groom's Name</div>
-									<input type="text" name="" class="input">
+									<div class="inputText"></div>
+									<input id="groomName" type="text" name="" class="input" placeholder="The groom's Name">
 								</div>
 							</div>
 						</div>
@@ -241,15 +241,15 @@
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="inputBox">
-									<div id="budget" class="inputText"><i class='fas fa-money-bill'></i> Budget</div>
-									<input type="text" name="" class="input">
+									<div  class="inputText"></div>
+									<input id="budget" type="text" name="" class="input" placeholder="Budget">
 								</div>
 							</div>
 
 							<div class="col-sm-6">
 								<div class="inputBox">
-									<div class="inputText">Mobile</div>
-									<input type="text" name="" class="input">
+									<div class="inputText"></div>
+									<input id="mobile" type="text" name="" class="input" placeholder="Mobile">
 								</div>
 							</div>
 						</div>
@@ -260,17 +260,17 @@
                         <hr/>
                         <div class="date-picker"  data-date="2014-02-03">
                             <div class="date-container">
-                                <h3 class="date">
+                                <h3 id="thisDate" class="date">
                                     <span data-toggle="datepicker" data-method="subtract" data-type="d" class="fa fa-angle-left"></span>
                                     <span class="text">17th</span>
                                     <span data-toggle="datepicker" data-method="add" data-type="d" class="fa fa-angle-right"></span>
                                 </h3>
-                                <h2 class="month">
+                                <h2 id="thisMonth" class="month">
                                     <span data-toggle="datepicker" data-method="subtract" data-type="M" class="fa fa-angle-left"></span>
                                     <span class="text">December</span>
                                     <span data-toggle="datepicker" data-method="add" data-type="M" class="fa fa-angle-right"></span>
                                 </h2>
-                                <h3 class="year">
+                                <h3 id="thisYear" class="year">
                                     <span data-toggle="datepicker" data-method="subtract" data-type="y" class="fa fa-angle-left"></span>
                                     <span class="text">2014</span>
                                     <span data-toggle="datepicker" data-method="add" data-type="y" class="fa fa-angle-right"></span>
@@ -294,79 +294,115 @@
 <hr>
 <!-- container step 3-->
 <div id="planBox" class="container-fluid text-center">
-  <h1>i am here</h1>
   <!-- create plan table -->
-<table id="myTbl" border="1" cellpadding="3">
-</table>
-<p id="testIDs"></p>
-  <script>
-    // var test;
-    // for (i = 0; i <= 13; i++) {
-    //   test += document.getElementById('task' + i).value;
-    // }
-    // document.getElementById("demo").innerHTML = test;
-    var text = "";
-    // var elmentID = "";
-    for (var i = 0; i < 13; i++) {
-        if( i == 0 ){
-            text += "<tr>" +  "<td>" + "Task" +  "</td>" + "<td>" + "Start Date" +  "</td>" + "<td>" + "Estimated budget" +  "</td>" + "</tr>";
-        }
-      // elmentID += "task" + String(i);
-      text += "<tr>" +  "<td>" + i +  "</td>" + "<td>" + i +  "</td>" + "<td>" + i +  "</td>" + "</tr>";
-    }
-    document.getElementById("myTbl").innerHTML = text;
-    // var li = document.getElementById("taskName5")
-    // console.log(li.textContent || li.innerText);
-    // document.getElementById("testIDs").innerHTML = document.getElementById("taskName1").innerText;
-    document.getElementById("testIDs").innerHTML = document.getElementById("dateinput").value;
-    // document.getElementById("testIDs").innerHTML = elmentID;
-  </script>
+  <h3 id="palnTitle"></h3>
+  <h3 id="wedDate"></h3>
+  <h3 id="test"></h3>
   <table id="myTbl2" border="1" cellpadding="3">
   </table>
+  <p id="comment"></p>
+  <center>
+    <button class="btn btn-primary hidden-print" onclick="myFunctionPrint()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button>
+  </center>
   <script>
+  function myFunctionPrint(planBox) {
+      var content = document.getElementById("planBox").innerHTML;
+      var mywindow = window.open('', 'Print', 'height=600,width=800');
+      mywindow.document.write('<html><head><title>Print</title>');
+      mywindow.document.write('</head><body >');
+      mywindow.document.write(content);
+      mywindow.document.write('</body></html>');
+
+      mywindow.document.close();
+      mywindow.focus()
+      mywindow.print();
+      mywindow.close();
+      return true;
+    }
+    
     function printPlan(){
+
+      // var dt = new Date(document.getElementById("dateinput").value);
+      // dt.setDate( dt.getDate() - 10 );
+      // document.getElementById("test").innerHTML = dt;
+
+      var pTitle = document.getElementById("brideName").value + " and " + document.getElementById("groomName").value + " wedding plan" + "<br>";
+      document.getElementById("palnTitle").innerHTML = pTitle;
+      var weddingDate = new Date(document.getElementById("dateinput").value);
+      document.getElementById("wedDate").innerHTML = " wedding date: " + weddingDate.toDateString() + "<br>";
+      var myBudget = document.getElementById("budget").value;
+      var currBudget = myBudget
       var text = "";
       text += "<tr>" +  "<td>" + "Task" +  "</td>" + "<td>" + "Start Date" +  "</td>" + "<td>" + "Estimated budget" +  "</td>" + "</tr>";
       if(document.getElementById("task1").checked == true){
-          text += "<tr>" +  "<td>" + "Find and book your venue" +  "</td>" + "<td>" + 0 +  "</td>" + "<td>" + 0 +  "</td>" + "</tr>";
+          var trydate = new Date(weddingDate.setDate( weddingDate.getDate() - 180 ));
+          text += "<tr>" +  "<td>" + "Find and book your venue" +  "</td>" + "<td>" + trydate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.1) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.1;
       }
       if(document.getElementById("task2").checked == true){
-          text += "<tr>" +  "<td>" + "Find and order your wedding invitations and start your guest list" +  "</td>" + "<td>" + 0 +  "</td>" + "<td>" + 0 +  "</td>" + "</tr>";
+          var trydate = new Date(weddingDate.setDate( weddingDate.getDate() - 165 ));
+          text += "<tr>" +  "<td>" + "Find and order your wedding invitations and start your guest list" +  "</td>" + "<td>" + trydate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.03) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.03;
       }
       if(document.getElementById("task3").checked == true){
-          text += "<tr>" +  "<td>" + "Find and book your caterer" +  "</td>" + "<td>" + 0 +  "</td>" + "<td>" + 0 +  "</td>" + "</tr>";
+          var trydate = new Date(weddingDate.setDate( weddingDate.getDate() - 140 ));
+          text += "<tr>" +  "<td>" + "Find and book your caterer" +  "</td>" + "<td>" + trydate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.22) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.22;
       }
       if(document.getElementById("task4").checked == true){
-          text += "<tr>" +  "<td>" + "Find and book your photographer" +  "</td>" + "<td>" + 0 +  "</td>" + "<td>" + 0 +  "</td>" + "</tr>";
+          var trydate = new Date(weddingDate.setDate( weddingDate.getDate() - 130 ));
+          text += "<tr>" +  "<td>" + "Find and book your photographer" +  "</td>" + "<td>" + trydate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.04) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.04;
       }
       if(document.getElementById("task5").checked == true){
-          text += "<tr>" +  "<td>" + "Find and book your videographer" +  "</td>" + "<td>" + 0 +  "</td>" + "<td>" + 0 +  "</td>" + "</tr>";
+          var trydate = new Date( weddingDate.setDate( weddingDate.getDate() - 120 ));
+          text += "<tr>" +  "<td>" + "Find and book your videographer" +  "</td>" + "<td>" + trydate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.03) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.03;
       }
       if(document.getElementById("task6").checked == true){
-          text += "<tr>" +  "<td>" + "Research songs and book you favorate DJ" +  "</td>" + "<td>" + 0 +  "</td>" + "<td>" + 0 +  "</td>" + "</tr>";
+          var trydate = new Date(weddingDate.setDate( weddingDate.getDate() - 115 ));
+          text += "<tr>" +  "<td>" + "Research songs and book you favorate DJ" +  "</td>" + "<td>" + trydate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.07) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.07;
       }
       if(document.getElementById("task7").checked == true){
-          text += "<tr>" +  "<td>" + "Find and book your hair and makeup vendor" +  "</td>" + "<td>" + 0 +  "</td>" + "<td>" + 0 +  "</td>" + "</tr>";
+          var trydate = new Date(weddingDate.setDate( weddingDate.getDate() - 110 ));
+          text += "<tr>" +  "<td>" + "Find and book your hair and makeup vendor" +  "</td>" + "<td>" + trydate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.04) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.04;
       }
       if(document.getElementById("task8").checked == true){
-          text += "<tr>" +  "<td>" + " Find and order your wedding dress, suit, or tux" +  "</td>" + "<td>" + 0 +  "</td>" + "<td>" + 0 +  "</td>" + "</tr>";
+          var trydate = new Date(weddingDate.setDate( weddingDate.getDate() - 105 ));
+          text += "<tr>" +  "<td>" + " Find and order your wedding dress, suit, or tux" +  "</td>" + "<td>" + trydate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.1) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.1;
       }
       if(document.getElementById("task9").checked == true){
-          text += "<tr>" +  "<td>" + "Purchase your wedding rings" +  "</td>" + "<td>" + 0 +  "</td>" + "<td>" + 0 +  "</td>" + "</tr>";
+          var trydate = new Date(weddingDate.setDate( weddingDate.getDate() - 80 ));
+          text += "<tr>" +  "<td>" + "Purchase your wedding rings" +  "</td>" + "<td>" + trydate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.13) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.13;
       }
       if(document.getElementById("task10").checked == true){
-          text += "<tr>" +  "<td>" + "Find and book your florist" +  "</td>" + "<td>" + 0 +  "</td>" + "<td>" + 0 +  "</td>" + "</tr>";
+          var trydate = new Date(weddingDate.setDate( weddingDate.getDate() - 70 ));
+          text += "<tr>" +  "<td>" + "Find and book your florist" +  "</td>" + "<td>" + trydate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.04) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.04;
       }
       if(document.getElementById("task11").checked == true){
-          text += "<tr>" +  "<td>" + "Find and order your wedding cake" +  "</td>" + "<td>" + 0 +  "</td>" + "<td>" + 0 +  "</td>" + "</tr>";
+          var trydate = new Date(weddingDate.setDate( weddingDate.getDate() - 62 ));
+          text += "<tr>" +  "<td>" + "Find and order your wedding cake" +  "</td>" + "<td>" + trydate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.02) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.02;
       }
       if(document.getElementById("task12").checked == true){
-          text += "<tr>" +  "<td>" + "Order your wedding favors, purchase gifts for your wedding party" +  "</td>" + "<td>" + 0 +  "</td>" + "<td>" + 0 +  "</td>" + "</tr>";
+          var trydate = new Date(weddingDate.setDate( weddingDate.getDate() - 58 ));
+          text += "<tr>" +  "<td>" + "Order your wedding favors, purchase gifts for your wedding party" +  "</td>" + "<td>" + trydate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.03) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.03;
       }
       if(document.getElementById("task13").checked == true){
-          text += "<tr>" +  "<td>" + "Plan and book your honeymoon" +  "</td>" + "<td>" + 0 +  "</td>" + "<td>" + 0 +  "</td>" + "</tr>";
+          var trydate = new Date(weddingDate.setDate( weddingDate.getDate() - 50 ));
+          text += "<tr>" +  "<td>" + "Plan and book your honeymoon" +  "</td>" + "<td>" + trydate.toDateString() +  "</td>" + "<td>" + parseInt(myBudget*0.15) +  "</td>" + "</tr>";
+          currBudget -= myBudget*0.15;
       }
       document.getElementById("myTbl2").innerHTML = text;
+      if( currBudget > 0 ){
+        document.getElementById("comment").innerHTML = "<br>" + "you still have " + parseInt(currBudget) + " extra in your budget" + "<br>" + "You can add more tasks";
+      }
     }
   </script>
   <ul class="pager">

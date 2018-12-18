@@ -3,6 +3,15 @@ body{
    background-color:#F9D5D7;
 }
 
+#palnTitle {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+    color: #660099;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
 /* this css for the header*/
 .navbar {
     margin-bottom: 0;
@@ -43,7 +52,7 @@ p.title {
 .container-fluid {
 
   height: 150vh;
-    
+
   background-color:#F9D5D7;
 }
 
