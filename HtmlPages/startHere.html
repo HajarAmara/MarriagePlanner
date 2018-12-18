@@ -295,18 +295,20 @@
 <!-- container step 3-->
 <div id="planBox" class="container-fluid text-center">
   <!-- create plan table -->
-
-  <h3 id="palnTitle"></h3>
-  <h4 id="wedDate"></h4>
-  <table id="myTbl2" border="1" cellpadding="3">
-  </table>
-  <p id="comment"></p>
+  <div id="planRes" class="">
+    <h3 id="palnTitle"></h3>
+    <h4 id="wedDate"></h4>
+    <table id="myTbl2" border="1" cellpadding="3">
+    </table>
+    <p id="comment"></p>
+  </div>
   <center>
     <button class="btn btn-primary hidden-print" onclick="myFunctionPrint()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button>
+    <button class="btn btn-primary " ><a href="../HtmlPages/startHere.html#planRess" download></a>Save</button>
   </center>
   <script>
-  function myFunctionPrint(planBox) {
-      var content = document.getElementById("planBox").innerHTML;
+  function myFunctionPrint(planRes) {
+      var content = document.getElementById("planRes").innerHTML;
       var mywindow = window.open('', 'Print', 'height=600,width=800');
       mywindow.document.write('<html><head><title>Print</title>');
       mywindow.document.write('</head><body >');

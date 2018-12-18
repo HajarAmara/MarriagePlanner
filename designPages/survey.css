@@ -81,3 +81,10 @@ html {
 .card-deck .card {
   min-width: 220px;
 }
+
+#submit{
+  background-color: #9CD6C9;
+}
+#reset{
+  background-color: #DC8A90;
+}
