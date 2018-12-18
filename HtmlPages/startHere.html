@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Marriage Planning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Form links-->
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <!-- select date links-->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <link href="../designPages/startHere.css" rel="stylesheet" type="text/css">
+  <script>
+  $(document).ready(function(){
+    // Add smooth scrolling to all links in navbar + footer link
+    $(".navbar a, footer a[href='#marriagePage']").on('click', function(event) {
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+        // Store hash
+        var hash = this.hash;
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 900, function(){
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } // End if
+    });
+    $(window).scroll(function() {
+      $(".slideanim").each(function(){
+        var pos = $(this).offset().top;
+        var winTop = $(window).scrollTop();
+          if (pos < winTop + 600) {
+            $(this).addClass("slide");
+          }
+      });
+    });
+  })
+  </script>
+  <!-- Form JS-->
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  	 <script type="text/javascript">
+  	 	$(".input").focus(function() {
+  	 		$(this).parent().addClass("focus");
+  	 	})
+  </script>
+
+  <!-- Date JS-->
+  <script type="text/javascript">
+    $(document).ready(function() {
+    $('.date-picker').each(function () {
+        var $datepicker = $(this),
+            cur_date = ($datepicker.data('date') ? moment($datepicker.data('date'), "YYYY/MM/dd") : moment());
+        function updateDisplay(cur_date) {
+            $('#dateinput').val(cur_date);
+            $datepicker.find('.date-container > .date > .text').text(cur_date.format('Do'));
+            $datepicker.find('.date-container > .month > .text').text(cur_date.format('MMMM'));
+            $datepicker.find('.date-container > .year > .text').text(cur_date.format('YYYY'));
+            $datepicker.data('date', cur_date.format('YYYY/MM/DD'));
+        }
+        updateDisplay(moment());
+        $datepicker.on('click', '[data-toggle="datepicker"]', function(event) {
+            event.preventDefault();
+            var cur_date = moment($(this).closest('.date-picker').data('date'), "YYYY/MM/DD"),
+                type = ($(this).data('type') ? $(this).data('type') : "date"),
+                method = ($(this).data('method') ? $(this).data('method') : "add"),
+                amt = ($(this).data('amt') ? $(this).data('amt') : 1);
+            if (method == "add") {
+                var duration = moment.duration(1,type);
+                cur_date = cur_date.add(duration);
+            }else if (method == "subtract") {
+                cur_date = cur_date.subtract(1,type);
+            }
+            updateDisplay(cur_date);
+        });
+    });
+});
+  </script>
+</head>
+<body id="marriagePage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="MarriagePlanning.html" style="float:right;"><img src="pics/HouseHeart.png" width="20px" height="20px" style="float:left;" alt="" hspace="10">Home</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Container (step 1) -->
+<div id="tasksBox" class="container-fluid center">
+  <div class="list container">
+  	<div class="row">
+      <div class="col-md-4">
+
+      </div>
+  	      <div id="infoID" class="col-md-4">
+    	    <div class="card" style="margin:50px 0">
+              <p class="title">Choose your wedding tasks</p>
+              <ul class="list-group list-group-flush">
+                <li id="venueId" class="list-group-item">
+                  Venue
+                  <i class='fas fa-place-of-worship'></i>
+                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+                <li id="cateringId"  class="list-group-item">
+                  Catering
+
+                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+                <li id="photographyId"  class="list-group-item">
+                  Photography
+                  <i class='fas fa-camera'></i>
+                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+                <li id="flowersId"  class="list-group-item">
+                  Flowers
+                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+                <li id="cakeId"  class="list-group-item">
+                  Cake
+                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+                <li id="dressId"  class="list-group-item">
+                  Dress and Attire
+                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+                <li id="cermonyId"  class="list-group-item">
+                  Ceremony Music
+                  <i class="fa fa-music"></i>
+                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+                <li id="invitId"  class="list-group-item">
+                  Invitations
+                  <i class='far fa-envelope'></i>
+                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+                <li id="jewelryId"  class="list-group-item">
+                  Jewelry
+                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+                <li id="beatyId"  class="list-group-item">
+                  Beauty and Health
+                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+                <li id="favorsId"  class="list-group-item">
+                  favors and gifts
+                  <i class="fa fa-gift"></i>
+                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+                <li id="ravelId"  class="list-group-item">
+                  Travel
+                  <i class='fas fa-plane'></i>
+                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+                <li id="videoId"  class="list-group-item">
+                  videography
+                  <i class='fas fa-video'></i>
+                  <label class="switch "><input type="checkbox" class="default"><span class="slider"></span></label>
+                </li>
+              </ul>
+          </div>
+        </div>
+		<script>
+		var text= function() {
+		   document.getElementById("planBox").innerHTML="hi "+<br>;
+		</script>
+        <div class="col-md-4">
+		
+ 
+
+        </div>
+    </div>
+    <ul class="pager">
+<li class="previous"><a href="MarriagePlanning.html">Previous</a></li>
+  <li class="next"><a href="#infoBox">Next</a></li>
+</ul>
+
+<div id="infoBox" class="container-fluid center">
+  <h1>here 1</h1>
+  <!-- Form template-->
+  <div class="container-fluid">
+		<div class="container">
+      <!-- general info -->
+      <div class="formBox">
+				<form>
+						<div class="row">
+							<div class="col-sm-12">
+								<h1>Details</h1>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="inputBox ">
+									<div class="inputText">Bride Name</div>
+									<input type="text" name="" class="input">
+								</div>
+							</div>
+
+							<div class="col-sm-6">
+								<div class="inputBox">
+									<div class="inputText">Groom Name</div>
+									<input type="text" name="" class="input">
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="inputBox">
+									<div class="inputText">Budget</div>
+									<input type="text" name="" class="input">
+								</div>
+							</div>
+
+							<div class="col-sm-6">
+								<div class="inputBox">
+									<div class="inputText">Mobile</div>
+									<input type="text" name="" class="input">
+								</div>
+							</div>
+						</div>
+            <!-- select date -->
+            <div class="row">
+                    <div class="col-sm-offset-4 col-sm-4">
+                        <h2>Wedding Date</h2>
+                        <hr/>
+                        <div class="date-picker"  data-date="2014-02-03">
+                            <div class="date-container">
+                                <h3 class="date">
+                                    <span data-toggle="datepicker" data-method="subtract" data-type="d" class="fa fa-angle-left"></span>
+                                    <span class="text">17th</span>
+                                    <span data-toggle="datepicker" data-method="add" data-type="d" class="fa fa-angle-right"></span>
+                                </h3>
+                                <h2 class="month">
+                                    <span data-toggle="datepicker" data-method="subtract" data-type="M" class="fa fa-angle-left"></span>
+                                    <span class="text">December</span>
+                                    <span data-toggle="datepicker" data-method="add" data-type="M" class="fa fa-angle-right"></span>
+                                </h2>
+                                <h3 class="year">
+                                    <span data-toggle="datepicker" data-method="subtract" data-type="y" class="fa fa-angle-left"></span>
+                                    <span class="text">2014</span>
+                                    <span data-toggle="datepicker" data-method="add" data-type="y" class="fa fa-angle-right"></span>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="dateinput" name="date"></input>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.js"></script>
+				</form>
+			</div>
+		</div>
+  <ul class="pager">
+  <li class="previous"><a href="#tasksBox">Previous</a></li>
+  <li class="next"><a href="#planBox">Next</a></li>
+  </ul>
+<div>
+<div id="planBox" class="container-fluid center">
+  <h1>here 2</h1>
+  <ul class="pager">
+  <li class="previous"><a href="#infoBox">Previous</a></li>
+  </ul>
+<div>
+</body>
+</html>

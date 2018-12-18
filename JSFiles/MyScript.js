@@ -26,6 +26,20 @@ function openWindowOrNo(theForm){
   }
 }
 
+function sendMessage(){
+	 var service_id = 'my_mandrill';
+	var template_id = 'feedback';
+	var template_params = {
+		name= document.forms["msgForm"]["name"].value;
+		reply_emaildocument.forms["msgForm"]["email"].value;
+		message=ocument.forms["msgForm"]["comments"].value
+	};
+	emailjs.send(service_id,template_id,template_params);
+}
+
+function appendTimeLineValues(){
+	return true;
+}
 
 function validateForm(){
      var email = document.forms["myForm"]["email"].value;
