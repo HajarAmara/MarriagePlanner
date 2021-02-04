@@ -30,22 +30,20 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center">Sign In</h5>
-            <form class="form-signin" action="MarriagePlanning.html"  onSubmit="return validateUser()">
+            <form class="form-signin" id="" action="MarriagePlanning.html"  onSubmit="return validateUser()">
               <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                <label for="inputEmail">Email address</label>
+                <input type="email" id="inputEmail" name="emailAdd" class="form-control" placeholder="Email address" required autofocus>
+                
               </div>
 
               <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                <label for="inputPassword">Password</label>
+                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
               </div>
 
               <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
                 <!--label class="custom-control-label" for="customCheck1">Remember password</label-->
               </div>
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" id="btnLogIn" type="submit">Sign in</button>
               <hr class="my-4">
 			   <h5 class="form-a text-center">yet not registerd
 			   <br> <a class="form-a" href="SignUp.html">Sign up</a></h5>
