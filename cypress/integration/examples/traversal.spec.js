@@ -102,13 +102,21 @@ context('Traversal', () => {
   })
 
   it('.prevAll() - get all previous sibling DOM elements', () => {
+<<<<<<< HEAD
     // https://on.cypress.io/prevall
+=======
+    // https://on.cypress.io/prevAll
+>>>>>>> 3dae16799ffe1ec897d8e0e5c98c6c4edfdefb83
     cy.get('.fruits-list').find('.third')
       .prevAll().should('have.length', 2)
   })
 
   it('.prevUntil() - get all previous sibling DOM elements until el', () => {
+<<<<<<< HEAD
     // https://on.cypress.io/prevuntil
+=======
+    // https://on.cypress.io/prevUntil
+>>>>>>> 3dae16799ffe1ec897d8e0e5c98c6c4edfdefb83
     cy.get('.foods-list').find('#nuts')
       .prevUntil('#veggies').should('have.length', 3)
   })

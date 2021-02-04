@@ -114,7 +114,11 @@ context('Network Requests', () => {
   })
 
   it('cy.intercept() - route responses to matching requests', () => {
+<<<<<<< HEAD
     // https://on.cypress.io/intercept
+=======
+    // https://on.cypress.io/http
+>>>>>>> 3dae16799ffe1ec897d8e0e5c98c6c4edfdefb83
 
     let message = 'whoa, this comment does not exist'
 
